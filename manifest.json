@@ -1,0 +1,408 @@
+{
+  "format": "bps-patch/1",
+  "game": "Dante98II",
+  "lang": "en",
+  "version": "2026.10.25",
+  "created": "2026-10-25T11:18:35.493Z",
+  "title": "Dante98 II English Patch",
+  "requires": "RPG Tsukuuru Dante98 II (ASCII, 1996), PC-98 hard disk version",
+  "credits": ["Dante98 II EN", "Original game © 1996 ASCII / LOGiN."],
+  "files": [
+    {
+      "path": "DANTE2/EDCHIP.EXE",
+      "patch": "src/EDCHIP.EXE.bps",
+      "source": {
+        "size": 44225,
+        "crc32": "fff4b904"
+      },
+      "target": {
+        "size": 44225,
+        "crc32": "18f84a9c"
+      }
+    },
+    {
+      "path": "DANTE2/EDCONV.EXE",
+      "patch": "src/EDCONV.EXE.bps",
+      "source": {
+        "size": 56476,
+        "crc32": "73a27a05"
+      },
+      "target": {
+        "size": 56476,
+        "crc32": "57c4b170"
+      }
+    },
+    {
+      "path": "DANTE2/EDENEMY.EXE",
+      "patch": "src/EDENEMY.EXE.bps",
+      "source": {
+        "size": 89143,
+        "crc32": "3594172b"
+      },
+      "target": {
+        "size": 89143,
+        "crc32": "9746f3e7"
+      }
+    },
+    {
+      "path": "DANTE2/EDITEM.EXE",
+      "patch": "src/EDITEM.EXE.bps",
+      "source": {
+        "size": 44019,
+        "crc32": "65ca1a9c"
+      },
+      "target": {
+        "size": 44019,
+        "crc32": "90714a5c"
+      }
+    },
+    {
+      "path": "DANTE2/EDMAGIC.EXE",
+      "patch": "src/EDMAGIC.EXE.bps",
+      "source": {
+        "size": 43803,
+        "crc32": "0e40a1b3"
+      },
+      "target": {
+        "size": 43803,
+        "crc32": "ba008815"
+      }
+    },
+    {
+      "path": "DANTE2/EDMAP.EXE",
+      "patch": "src/EDMAP.EXE.bps",
+      "source": {
+        "size": 103659,
+        "crc32": "9cc5b2c6"
+      },
+      "target": {
+        "size": 103659,
+        "crc32": "b076b686"
+      }
+    },
+    {
+      "path": "DANTE2/EDMENU.EXE",
+      "patch": "src/EDMENU.EXE.bps",
+      "source": {
+        "size": 16077,
+        "crc32": "bf882d58"
+      },
+      "target": {
+        "size": 16077,
+        "crc32": "9b9edd37"
+      }
+    },
+    {
+      "path": "DANTE2/EDPACK.EXE",
+      "patch": "src/EDPACK.EXE.bps",
+      "source": {
+        "size": 18843,
+        "crc32": "629df7a3"
+      },
+      "target": {
+        "size": 18843,
+        "crc32": "182f2646"
+      }
+    },
+    {
+      "path": "DANTE2/EDPLAYER.EXE",
+      "patch": "src/EDPLAYER.EXE.bps",
+      "source": {
+        "size": 59981,
+        "crc32": "d646693f"
+      },
+      "target": {
+        "size": 59981,
+        "crc32": "06175b47"
+      }
+    },
+    {
+      "path": "DANTE2/EDUSAGE.EXE",
+      "patch": "src/EDUSAGE.EXE.bps",
+      "source": {
+        "size": 66521,
+        "crc32": "676e146f"
+      },
+      "target": {
+        "size": 66521,
+        "crc32": "36bf187c"
+      }
+    },
+    {
+      "path": "DANTE2/EDWORD.EXE",
+      "patch": "src/EDWORD.EXE.bps",
+      "source": {
+        "size": 39433,
+        "crc32": "36cc9266"
+      },
+      "target": {
+        "size": 39433,
+        "crc32": "bb359ed7"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/ENEMY.DAT",
+      "patch": "src/DAT_RPG_ENEMY.DAT.bps",
+      "source": {
+        "size": 26112,
+        "crc32": "248410f8"
+      },
+      "target": {
+        "size": 26112,
+        "crc32": "1fad43c8"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/ITEM.DAT",
+      "patch": "src/DAT_RPG_ITEM.DAT.bps",
+      "source": {
+        "size": 10240,
+        "crc32": "6fa1fcc5"
+      },
+      "target": {
+        "size": 10240,
+        "crc32": "4e556478"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/MAGIC.DAT",
+      "patch": "src/DAT_RPG_MAGIC.DAT.bps",
+      "source": {
+        "size": 20480,
+        "crc32": "b2840c72"
+      },
+      "target": {
+        "size": 20480,
+        "crc32": "9a588fd7"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP000.DAT",
+      "patch": "src/DAT_MAP_MAP000.DAT.bps",
+      "source": {
+        "size": 5115,
+        "crc32": "1965f578"
+      },
+      "target": {
+        "size": 5102,
+        "crc32": "47fe4674"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP001.DAT",
+      "patch": "src/DAT_MAP_MAP001.DAT.bps",
+      "source": {
+        "size": 9883,
+        "crc32": "5e44a6e7"
+      },
+      "target": {
+        "size": 9854,
+        "crc32": "348c847a"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP002.DAT",
+      "patch": "src/DAT_MAP_MAP002.DAT.bps",
+      "source": {
+        "size": 8626,
+        "crc32": "2ffe36b1"
+      },
+      "target": {
+        "size": 8711,
+        "crc32": "f547e7f1"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP003.DAT",
+      "patch": "src/DAT_MAP_MAP003.DAT.bps",
+      "source": {
+        "size": 4893,
+        "crc32": "209e8d2e"
+      },
+      "target": {
+        "size": 4919,
+        "crc32": "a1de9e64"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP004.DAT",
+      "patch": "src/DAT_MAP_MAP004.DAT.bps",
+      "source": {
+        "size": 13786,
+        "crc32": "e4930679"
+      },
+      "target": {
+        "size": 13808,
+        "crc32": "53d7b1df"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP005.DAT",
+      "patch": "src/DAT_MAP_MAP005.DAT.bps",
+      "source": {
+        "size": 39819,
+        "crc32": "0b6b6ba5"
+      },
+      "target": {
+        "size": 40369,
+        "crc32": "aa61522f"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP006.DAT",
+      "patch": "src/DAT_MAP_MAP006.DAT.bps",
+      "source": {
+        "size": 22373,
+        "crc32": "87899659"
+      },
+      "target": {
+        "size": 22663,
+        "crc32": "76a9e389"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP007.DAT",
+      "patch": "src/DAT_MAP_MAP007.DAT.bps",
+      "source": {
+        "size": 51505,
+        "crc32": "eb12bc5c"
+      },
+      "target": {
+        "size": 51847,
+        "crc32": "38ff46a3"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP008.DAT",
+      "patch": "src/DAT_MAP_MAP008.DAT.bps",
+      "source": {
+        "size": 10164,
+        "crc32": "b6df645a"
+      },
+      "target": {
+        "size": 10286,
+        "crc32": "a4726ca4"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP009.DAT",
+      "patch": "src/DAT_MAP_MAP009.DAT.bps",
+      "source": {
+        "size": 10517,
+        "crc32": "4c7085d4"
+      },
+      "target": {
+        "size": 10588,
+        "crc32": "08eb25a9"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP011.DAT",
+      "patch": "src/DAT_MAP_MAP011.DAT.bps",
+      "source": {
+        "size": 6679,
+        "crc32": "5381af8b"
+      },
+      "target": {
+        "size": 6707,
+        "crc32": "0f95c171"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP012.DAT",
+      "patch": "src/DAT_MAP_MAP012.DAT.bps",
+      "source": {
+        "size": 5141,
+        "crc32": "a0a9d3de"
+      },
+      "target": {
+        "size": 5143,
+        "crc32": "21abbd4a"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP013.DAT",
+      "patch": "src/DAT_MAP_MAP013.DAT.bps",
+      "source": {
+        "size": 10499,
+        "crc32": "3ca39b64"
+      },
+      "target": {
+        "size": 10554,
+        "crc32": "d5d4b230"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/MAPNAME.DAT",
+      "patch": "src/DAT_RPG_MAPNAME.DAT.bps",
+      "source": {
+        "size": 16000,
+        "crc32": "e7138665"
+      },
+      "target": {
+        "size": 16000,
+        "crc32": "d744d8a9"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/PLAYER.DAT",
+      "patch": "src/DAT_RPG_PLAYER.DAT.bps",
+      "source": {
+        "size": 3080,
+        "crc32": "3bed6347"
+      },
+      "target": {
+        "size": 3080,
+        "crc32": "31f2a196"
+      }
+    },
+    {
+      "path": "DANTE2/RPG.EXE",
+      "patch": "src/RPG.EXE.bps",
+      "source": {
+        "size": 110607,
+        "crc32": "e54f0530"
+      },
+      "target": {
+        "size": 110607,
+        "crc32": "68b3f8f3"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_RPG/WORD.DAT",
+      "patch": "src/DAT_RPG_WORD.DAT.bps",
+      "source": {
+        "size": 1938,
+        "crc32": "58668980"
+      },
+      "target": {
+        "size": 1938,
+        "crc32": "3f5029f3"
+      }
+    },
+    {
+      "path": "DANTE2/DAT_MAP/MAP010.DAT",
+      "patch": "src/DAT_MAP_MAP010.DAT.bps",
+      "source": {
+        "size": 6169,
+        "crc32": "bd048511"
+      },
+      "target": {
+        "size": 6169,
+        "crc32": "30718b62"
+      }
+    },
+    {
+      "path": "DANTE2/EDMENU.DAT",
+      "patch": "src/EDMENU.DAT.bps",
+      "source": {
+        "size": 128048,
+        "crc32": "7e6d7b3d"
+      },
+      "target": {
+        "size": 128048,
+        "crc32": "52e9059b"
+      }
+    }
+  ]
+}
