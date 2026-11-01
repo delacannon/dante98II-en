@@ -1,0 +1,43 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 48 Jingle 4 (Shock).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T140 = 74.713 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 0, 7, 31, 18, 2, 0, 2, 26, 3, 10, 0, 0, 31, 14, 2, 0, 2, 45, 1, 0, 0, 0, 31, 6, 2, 0, 2, 10, 1, 0, 0, 0, 31, 2, 2, 8, 2, 12, 0, 0, 0, 0 }
+@1 = { 0, 7, 31, 18, 2, 0, 2, 127, 3, 10, 0, 0, 31, 14, 2, 0, 2, 127, 1, 0, 0, 0, 31, 6, 2, 0, 2, 10, 1, 0, 0, 0, 31, 2, 2, 8, 2, 12, 0, 0, 0, 0 }
+@2 = { 0, 7, 31, 18, 2, 0, 2, 26, 3, 10, 0, 0, 31, 14, 2, 0, 2, 45, 1, 0, 0, 0, 31, 6, 2, 0, 2, 127, 1, 0, 0, 0, 31, 2, 2, 8, 2, 127, 0, 0, 0, 0 }
+
+; CH1
+A T140 V108 @0 p3 V108 D0 o2 e24 o3 d+2& d+6 r16. r48
+
+; CH2
+B T140 V108 @0 p3 V108 D4 o2 c+24 o3 c+2& c+6 r16. r48
+
+; CH3
+C T140 V108 @1 p3 V108 D0 o2 e24 D-1 o3 c2& c6 r16. r48
+
+; CH3 OP1+OP2 (special mode)
+F T140 V108 @2 p3 V108 D0 o2 e24 D-1 o3 c2& c6 r16. r48
+
+; SSG1
+G T140 P1 v14 D1 o3 e48& v13 e48& v14 D0 o4 f+48& v13 f+48& v8 f+24& v13 f+48& v12 f+48& v7 f+24& v12
+G f+48& v11 f+48& v6 f+24& v11 f+48& v10 f+48& v5 f+24& v10 f+48& v9 f+48& v5 f+24& v9 f+48& v8 f+48&
+G v3 f+24& v8 f+48& v7 f+48& v3 f+24& v1 f+48 r6 r96
+
+; SSG2
+H T140 r48 P1 v12 D0 o3 e24& o4 c24& c+24& v11 o3 e24& o4 c24& c+24& v10 o3 e24& o4 c24& c+24& v9 o3
+H e24& o4 c24& c+24& v8 o3 e24& o4 c24& c+24& o3 e24& o4 c24& c+24 r24 r96
+
+; SSG3
+I T140 P1 v12 D3 o3 e24& D2 o4 c24& c+24& v11 D3 o3 e24& D2 o4 c24& c+24& v10 D3 o3 e24& D2 o4 c24&
+I c+24& v9 D3 o3 e24& D2 o4 c24& c+24& v8 D3 o3 e24& D2 o4 c24& c+24& D3 o3 e24& D2 o4 c24& c+24 r16
+I r96

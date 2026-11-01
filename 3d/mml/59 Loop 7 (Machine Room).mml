@@ -1,0 +1,67 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 59 Loop 7 (Machine Room).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T150 = 81.761 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 4, 0, 18, 6, 15, 4, 15, 0, 0, 0, 7, 0, 24, 4, 15, 6, 15, 20, 0, 0, 7, 0, 18, 6, 15, 4, 15, 0, 0, 0, 0, 0, 24, 4, 15, 6, 15, 20, 0, 0, 0, 0 }
+@1 = { 2, 7, 31, 4, 0, 10, 0, 30, 0, 6, 0, 0, 31, 7, 0, 10, 0, 35, 0, 0, 0, 0, 31, 4, 0, 10, 0, 30, 0, 0, 0, 0, 24, 7, 0, 15, 0, 27, 0, 1, 0, 0 }
+@2 = { 2, 7, 31, 4, 0, 10, 0, 127, 0, 6, 0, 0, 31, 7, 0, 10, 0, 127, 0, 0, 0, 0, 31, 4, 0, 10, 0, 30, 0, 0, 0, 0, 24, 7, 0, 15, 0, 27, 0, 1, 0, 0 }
+@3 = { 2, 7, 31, 4, 0, 10, 0, 30, 0, 6, 0, 0, 31, 7, 0, 10, 0, 35, 0, 0, 0, 0, 31, 4, 0, 10, 0, 127, 0, 0, 0, 0, 24, 7, 0, 15, 0, 127, 0, 1, 0, 0 }
+
+; CH1
+A T150 V108 @0 p3 V108 D0 o2 d96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96&
+A D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96 D0 e96& D-11 f96& D10
+A d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10
+A d+96& D-11 f96& D10 d+96& D-11 f96 D0 d96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96&
+A D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96 D0 e96& D-11
+A f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96& D10 d+96& D-11
+A f96& D10 d+96& D-11 f96& D10 d+96& D-11 f96 D0 d96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96&
+A D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+96& D-9 d+96& D9 c+48
+
+; CH2
+B T150 V108 @1 p3 V108 D0 o2 g2.& g12
+
+; CH3
+C T150 V108 @2 p3 V108 D21 o2 g2.& g12
+
+; CH3 OP1+OP2 (special mode)
+F T150 V108 @3 p3 V108 D21 o2 g2.& g12
+
+; SSG1
+G T150 P1 v8 D0 o7 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6
+G b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6
+G c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6
+G b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6
+G c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6
+G b96& v5 b96& v8 c96& v7 c96& v6 c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6
+G c96& v5 c96& v8 b96& v7 b96& v6 b96& v5 b96& v8 c96& v7 c96& v6 c48
+
+; SSG2
+H T150 P1 v8 D0 o7 a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7
+H a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6 a+96& v5 a+96& v8
+H d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5
+H d+96& v8 a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6
+H a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7
+H d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8
+H a+96& v7 a+96& v6 a+96& v5 a+96& v8 d+96& v7 d+96& v6 d+96& v5 d+96& v8 a+96& v7 a+96& v6 a+96& v5
+H a+96& v8 d+96& v7 d+96& v6 d+48
+
+; SSG3
+I T150 P1 v10 D0 o7 g96& v9 g96& v8 g96& v7 g96& v10 D1 o6 g96& v9 g96& v8 g96& v7 g96& v6 g96& v5
+I g96& v5 g96& v4 g96& v3 g48& v1 g96 r96 v10 g96& v9 g96& v8 g96& v7 g96& v10 D-1 o5 g+96& v9 g+96&
+I v8 g+96& v7 g+96& v6 g+96& v5 g+96& v5 g+96& v4 g+96& v3 g+48& v1 g+96 r96 v10 D1 o6 g96& v9 g96&
+I v8 g96& v7 g96& v10 D-1 o5 g+96& v9 g+96& v8 g+96& v7 g+96& v6 g+96& v5 g+96& v5 g+96& v4 g+96& v3
+I g+48& v1 g+96 r96 v10 D1 o6 g96& v9 g96& v8 g96& v7 g96& v10 D-1 o5 g+96& v9 g+96& v8 g+96& v7
+I g+96& v6 g+96& v5 g+96& v5 g+96& v4 g+96& v3 g+48& v1 g+96 r96 v10 D1 o6 g96& v9 g96& v8 g96& v7
+I g96& v10 D-1 o5 g+96& v9 g+96& v8 g+96& v7 g+96& v6 g+96& v5 g+96& v5 g+96& v4 g+96& v3 g+48& v1
+I g+48
