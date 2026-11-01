@@ -502,6 +502,15 @@ html, body, #root {
   text-decoration: none;
 }
 
+.patch-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 14px;
+  border: 0;
+  background: #000;
+}
+
 .patch-kofi:hover,
 .patch-kofi:focus-visible {
   border-color: white;
