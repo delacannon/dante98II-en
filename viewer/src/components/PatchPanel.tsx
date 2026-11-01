@@ -164,6 +164,16 @@ export function PatchPanel() {
         <a className="patch-kofi" href="https://ko-fi.com/alammo" target="_blank" rel="noreferrer">
           ♥ Support on Ko-fi
         </a>
+
+        <iframe
+          className="patch-video"
+          src="https://www.youtube-nocookie.com/embed/N_WwWSnwjBA"
+          title="Dante98 II video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
       </div>
     </aside>
   );
