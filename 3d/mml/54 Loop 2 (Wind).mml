@@ -1,0 +1,372 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect)
+; Source: 54 Loop 2 (Wind).vgz
+; YM2203 FM/SSG. Minimum 1/16; BPM=135.417 from the VGM's Timer B.
+; Quantized base FNUM pitch and observed FM patches; modulation and live register changes are not reproduced.
+; Unknown/out-of-range pitches become rests. KEY OFF does not include audible release.
+; MIDI 60 = o4 c; &=tie; default full gate. SSG v is the peak volume; software envelopes are not reproduced.
+; Timer B T192: approximately 135.417 BPM (as the song set it).
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+; WARNING (1): Tick-exact output too large (380806 characters); written on a 1/16 grid instead
+; Observed patch @1
+@0 = { 5, 7, 14, 3, 0, 6, 0, 0, 0, 10, 0, 0, 6, 3, 0, 6, 0, 28, 0, 10, 1, 0, 6, 3, 0, 6, 0, 20, 0, 10, 0, 0, 6, 3, 0, 6, 0, 20, 0, 10, 0, 0 }
+; Observed patch @2
+@1 = { 4, 0, 12, 3, 0, 6, 0, 0, 0, 0, 7, 0, 14, 3, 0, 8, 0, 20, 0, 0, 7, 0, 12, 3, 0, 8, 0, 0, 0, 0, 0, 0, 14, 3, 0, 8, 0, 20, 0, 0, 0, 0 }
+; Observed patch @3
+@2 = { 4, 0, 12, 3, 0, 6, 0, 127, 0, 0, 7, 0, 14, 3, 0, 8, 0, 127, 0, 0, 7, 0, 12, 3, 0, 8, 0, 0, 0, 0, 0, 0, 14, 3, 0, 8, 0, 20, 0, 0, 0, 0 }
+
+; CH1
+A T192 V108 p3 @0 o4 e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2&
+A f8. f+2& f+8 r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2&
+A g+8 a2& a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8
+A f+2& f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8.
+A a2& a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8.
+A f+2& f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8.
+A a2& a8 r8. e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2& f8.
+A f+2& f+8 r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2& g+8
+A a2& a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8
+A f+2& f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8.
+A a2& a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8.
+A f+2& f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8.
+A a2& a8 r8. e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2& f8 f+2&
+A f+8. r8. g2& g8 g+2& g+8. a2& a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2& g+8 a2&
+A a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8 f+2&
+A f+8. r8 g2& g8. g+2& g+8. a2& a8 r8. e2& e8. f2& f8 f+2& f+8. r8. g2& g8 g+2& g+8. a2&
+A a8. r8 e2& e8. f2& f8. f+2& f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8. f+2&
+A f+8 r8. g2& g8. g+2& g+8 a2& a8. r8. e2& e8 f2& f8. f+2& f+8. r8 g2& g8. g+2& g+8. a4.&
+A a16
+
+; CH2
+B T192 V108 p3 @1 o1 f16 f16 f16 d+16 d+16 d+16 d+16 d+16 f16 f16 f16 f+16 f+16 f+16 f+16
+B f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16
+B g+16 g+16 g+16 g+16 g+16 g+16 f+16 f+16 f+16 g16 g16 a16 a16 a16 a16 a16 g16 a16 a16
+B a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 f16
+B f16 f16 f16 f+16 e16 e16 e16 e16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16
+B g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 f+16 f+16 g+16 g+16 g+16 a16 a16 a16 a16
+B g16 a16 g16 a16 g16 g16 a16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a+16 g+16 g+16 g+16 d+16
+B d+16 d+16 d+16 d+16 d+16 d+16 f16 d+16 f16 e16 e16 f+16 f+16 f+16 e16 f+16 f+16 f+16
+B e16 f+16 f16 f16 f16 f16 f16 f16 f16 g16 f16 f16 g16 f+16 f+16 f+16 f+16 g+16 f+16 f+16
+B f+16 f+16 g+16 g16 g16 a16 a16 g16 g16 a16 g16 a16 a16 a16 a+16 a+16 a+16 g+16 g+16
+B g+16 g+16 g+16 a+16 g+16 a+16 d+16 f16 d+16 d+16 d+16 d+16 f16 d+16 d+16 d+16 d+16 e16
+B f+16 f+16 f+16 e16 e16 e16 e16 e16 e16 g16 g16 g16 g16 g16 f16 g16 g16 g16 g16 g16 g+16
+B g+16 g+16 f+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 g16 a16 a16 a16 a16 a16 a16 a16 g16
+B g16 a+16 g+16 a+16 g+16 g+16 a+16 a+16 g+16 a+16 g+16 a+16 f16 f16 f16 f16 d+16 f16 f16
+B f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 f16 f16 f16
+B f16 f16 f16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16
+B a16 a16 a16 a16 a16 g16 g16 a16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 g+16 g+16 g+16 g+16
+B d+16 f16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 e16 f+16 e16 e16 e16 e16 e16 e16
+B e16 e16 f+16 g16 f16 f16 g16 g16 g16 g16 g16 g16 g16 f+16 f+16 f+16 f+16 g+16 f+16 f+16
+B f+16 f+16 f+16 f+16 g16 g16 g16 a16 g16 g16 g16 g16 g16 g16 a16 g+16 g+16 g+16 a+16
+B g+16 g+16 a+16 g+16 g+16 g+16 a+16 f16 f16 f16 d+16 d+16 f16 d+16 d+16 d+16 d+16 e16
+B e16 e16 e16 e16 e16 f+16 e16 e16 e16 e16 f16 f16 g16 g16 g16 g16 f16 f16 g16 f16 g16
+B g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16
+B a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 a+16 f16 d+16 d+16 d+16 d+16
+B f16 d+16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16
+B g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 f+16 f+16 f+16 f+16 g+16 g+16 g+16 a16
+B a16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16
+B g+16 a+16 d+16 f16 f16 d+16 f16 f16 d+16 d+16 d+16 d+16 d+16 e16 e16 e16 e16 e16 f+16
+B e16 e16 e16 e16 f16 f16 f16 f16 f16 g16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16
+B g+16 g+16 g+16 g+16 g+16 g+16 g16 g16 g16 g16 g16 g16 g16 a16 g16 g16 g+16 g+16 g+16
+B g+16 g+16 g+16 g+16 g+16 a+16 g+16 a+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 f16 f16
+B f16 f+16 e16 f+16 f+16 e16 f+16 e16 e16 e16 e16 f+16 f16 f16 g16 f16 f16 f16 f16 f16
+B f16 f16 g16 g+16 f+16 g+16 g+16 f+16 g+16 f+16 f+16 g+16 g+16 g16 g16 a16 a16 a16 a16
+B a16 a16 a16 a16 g+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 a+16 f16 f16 f16 f16
+B f16 f16 d+16 f16 f16 f16 f16 e16 e16 f+16 e16 f+16 e16 f+16 f+16 e16 f+16 f+16 g16 f16
+B g16 g16 g16 g16 g16 g16 g16 f16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 f+16 g+16 g+16 g+16
+B a16 a16 a16 a16 a16 g16 g16 a16 g16 g16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16
+B a+16 a+16 g+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 d+16 e16 e16 e16 f+16 f+16 f+16 f+16
+B f+16 e16 e16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 g16 g16 f+16 f+16 f+16 f+16 f+16
+B f+16 f+16 f+16 f+16 g+16 g16 g16 g16 g16 g16 g16 g16 a16 a16 a16 a16 a+16 a+16 g+16
+B g+16 g+16 g+16 g+16 g+16 a+16 g+16 a+16 d+16 f16 d+16 d+16 d+16 d+16 d+16 d+16 d+16
+B d+16 f16 e16 f+16 e16 e16 e16 e16 e16 e16 e16 f+16 g16 g16 g16 g16 g16 g16 f16 f16 f16
+B f16 f16 f+16 f+16 f+16 f+16 g+16 f+16 f+16 f+16 f+16 f+16 g+16 g16 g16 g16 a16 a16 a16
+B a16 a16 g16 g16 g+16 g+16 g+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 a+16 f16 f16 f16 f16
+B f16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 f16
+B f16 f16 f16 f16 g16 f16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16
+B g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16
+B g+16 a+16 g+16 e16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16
+B f+16 f+16 f+16 f+16 f+16 f+16 g16 f16 f16 g16 g16 g16 g16 g16 g16 f16 f+16 g+16 f+16
+B g+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 a16 g16 g16 g16 g16 g16 g16 a16
+B g+16 g+16 g+16 a+16 g+16 g+16 g+16 a+16 a+16 g+16 a+16 f16 f16 f16 d+16 d+16 f16 d+16
+B d+16 d+16 d+16 e16 e16 e16 e16 e16 e16 f+16 e16 e16 e16 e16 f16 f16 f16 f16 f16 g16 f16
+B f16 f16 f16 g16 g+16 f+16 f+16 g+16 g+16 g+16 f+16 f+16 g+16 f+16 g+16 g16 g16 g16 g16
+B g16 g16 g16 a16 g16 g16 g+16 g+16 g+16 g+16 g+16 a+16 a+16 a+16 a+16 g+16 g+16 f16 d+16
+B d+16 f16 f16 f16 f16 d+16 f16 f16 f16 f+16 f+16 f+16 f+16 e16 f+16 f+16 f+16 f+16 f+16
+B f+16 g16 g16 f16 g16 g16 g16 g16 g16 g16 g16 f+16 g+16 f+16 g+16 g+16 f+16 f+16 f+16
+B f+16 g+16 g+16 a16 a16 a16 a16 a16 a16 g16 a16 a16 a16 a16 a+16 a+16 a+16 g+16 a+16
+B a+16 a+16 a+16 a+16 a+16 f16 d+16 f16 f16 f16 f16 f16 d+16 d+16 f16 d+16 e16 f+16 f+16
+B f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16
+B f+16 f+16 f+16 f+16 g+16 g+16 g+16 g+16 g+16 f+16 g16 g16 g16 g16 a16 g16 g16 a16 g16
+B g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a+16 g+16 g+16 d+16 d+16 d+16 d+16 d+16
+B d+16 d+16 f16 f16 f16 d+16 f+16 f+16 f+16 f+16 e16 e16 e16 f+16 e16 e16 f+16 f16 f16
+B f16 f16 f16 f16 f16 f16 f16 g16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g+16
+B g16 g16 a16 a16 a16 g16 a16 a16 g16 g16 a16 g+16 a+16 g+16 g+16 g+16 g+16 g+16 g+16
+B g+16 g+16 g+16 d+16 f16 d+16 d+16 d+16 d+16 f16 f16 f16 f16 e16 f+16 e16 e16 e16 e16
+B f+16 e16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16
+B g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 g16 g16 g16 g16 g16 g+16
+B a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 f16 f16 f16 f16 f16 f16 f16 f16 f16
+B f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 e16 e16 e16 f16 f16 f16 g16 g16 g16 g16 g16
+B g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 g16 g16 g16 g16
+B a16 a16 a16 a16 a16 a+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a+16 a+16 d+16 f16
+B d+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 f16 f+16 e16 e16 e16 e16 e16 e16 e16 e16 f+16
+B g16 g16 g16 g16 g16 f16 f16 f16 f16 f16 f16 f+16 g+16 f+16 g+16 f+16 f+16 f+16 f+16
+B f+16 f+16 g+16 g16 g16 g16 a16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 a+16 a+16 a+16
+B a+16 a+16 a+16 g+16 a+16 d+16 d+16 d+16 f16 d+16 f16 f16 d+16 d+16 d+16 d+16 e16 e16
+B f+16 e16 e16 e16 e16 f+16 f+16 f+16 g16 f16 f16 f16 f16 f16 g16 g16 g16 g16 g16 g+16
+B g+16 f+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 f+16 a16 a16 a16 a16 a16 a16 a16 a16 g16
+B a16 a+16 a+16 a+16 a+16 a+16 g+16 g+16 g+16 g+16 a+16 a+16 e16 f16 f16 d+16 f16 f16 f16
+B f16 f16 f16 f16 f+16 e16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 e16 f+16 g16 g16 g16 g16
+B g16 g16 f16 g16 g16 f16 g+16 f+16 f+16 f+16 f+16 f+16 g+16 g+16 g+16 g+16 g+16 a16 a16
+B g16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 g+16 g+16 g+16 g+16 a+16 a+16 a+16
+B a+16 f16 f16 f16 d+16 d+16 d+16 f16 d+16 d+16 d+16 e16 e16 e16 f+16 e16 f+16 e16 e16
+B e16 e16 e16 f16 f16 f16 f16 f16 g16 f16 f16 f16 f16 g16 g+16 g+16 g+16 g+16 g+16 g+16
+B f+16 g+16 f+16 f+16 g16 g16 g16 g16 g16 a16 g16 g16 a16 g16 g16 g+16 g+16 g+16 g+16
+B g+16 g+16 g+16 g+16 a+16 g+16 a+16 d+16 d+16 d+16 d+16 f16 f16 f16 f16 f16 f16 d+16 e16
+B f+16 e16 e16 e16 e16 e16 f+16 e16 e16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 g16 g16 g+16
+B g+16 f+16 g+16 f+16 f+16 f+16 f+16 g+16 g+16 g+16 a16 a16 g16 a16 a16 a16 a16 a16 a16
+B a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 d+16
+B f16 d+16 d+16 d+16 e16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16
+B g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 f+16 g16 g16
+B g16 g16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16
+B f16 f16 f16 f16 d+16 d+16 d+16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 e16 e16 e16 f+16 e16
+B e16 f+16 f16 f16 f16 f16 f16 f16 g16 f16 f16 g16 f+16 f+16 f+16 f+16 f+16 f+16 f+16
+B f+16 f+16 f+16 g+16 g16 a16 a16 a16 a16 a16 a16 a16 g16 a16 g16 g+16 a+16 g+16 g+16
+B g+16 g+16 g+16 g+16 g+16 a+16 a+16 d+16 f16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 d+16 e16
+B f+16 e16 e16 e16 e16 f+16 e16 f+16 f+16 f+16 g16 g16 f16 f16 f16 g16 f16 f16 f16 f16
+B g16 f+16 g+16 f+16 g+16 f+16 f+16 f+16 g+16 f+16 g+16 a16 g16 a16 a16 a16 a16 g16 g16
+B g16 g16 g16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 g+16 a+16 a+16 g+16 e16
+
+; CH3
+C T192 V108 p3 r16 @2 o1 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f16
+C f16 f16 f16 f16 f16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16
+C g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 g+16 g+16 a16 a16
+C a16 a+16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16
+C f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 f+16 f+16 f+16 g16 f+16 f+16
+C f+16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g16 g+16 g16 g16 g+16 g+16 g+16 g+16
+C g+16 g+16 g+16 a16 g+16 g+16 a16 a16 a+16 a+16 a+16 a+16 a16 a+16 a+16 a16 a16 a+16 e16
+C e16 e16 e16 e16 e16 e16 f16 e16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 f+16
+C f+16 f+16 f+16 g16 g16 g16 g16 g16 f+16 g16 g16 g16 g16 g16 g+16 g16 g16 g16 g16 g+16
+C g+16 g+16 a16 a16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a+16 a16 a16 a16 a16 a16
+C a+16 a+16 a+16 a+16 f16 e16 e16 e16 e16 f16 e16 e16 e16 e16 f16 f+16 f+16 f+16 f+16
+C f+16 f+16 f16 f+16 f+16 f+16 g16 g16 g16 g16 f+16 g16 f+16 f+16 g16 g16 g+16 g+16 g+16
+C g16 g+16 g16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 g+16 a16 a16 a+16
+C a+16 a+16 a+16 a+16 a+16 a16 a+16 a+16 a+16 a+16 e16 e16 e16 e16 f16 f16 f16 f16 f16
+C f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16
+C g16 g16 g16 g16 g+16 g+16 g16 g16 g16 g+16 g16 g16 g+16 g+16 a16 a16 a16 a16 a16 a16
+C a16 g+16 g+16 a16 a16 a+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 f16 f16 f16 f16 f16
+C f16 e16 e16 e16 e16 f16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 g16 f+16 f+16 g16
+C f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g+16 g16 g+16 g+16 g+16 g+16 g+16 g+16
+C g+16 g+16 a16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a+16 a16 a16 a+16 a16 a16
+C a16 a+16 e16 e16 e16 e16 e16 f16 e16 e16 f16 f16 f16 f+16 f+16 f+16 f16 f16 f+16 f16
+C f16 f16 f16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16
+C g16 g+16 g+16 g16 g+16 g+16 a16 g+16 g+16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16
+C a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16
+C f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16
+C g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 g+16 g+16 g+16 g+16 g+16
+C g+16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a16 a16 a+16 a+16 e16 f16 e16 e16 f16
+C e16 e16 e16 e16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f16 f16 f+16 f+16 f+16 f+16
+C f+16 g16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g+16 g16 g16 g+16 g16 g+16 g+16
+C g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a+16 a16 a16 a16 a16 a16 a16 a+16 a16 a+16
+C a+16 e16 e16 e16 e16 e16 e16 e16 f16 e16 f16 f16 f16 f16 f16 f16 f+16 f16 f16 f16 f16
+C f+16 g16 g16 g16 g16 g16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g+16 g16 g+16 g+16
+C g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 g+16 g+16 g+16 a16 a+16 a16 a+16 a+16
+C a+16 a+16 a+16 a16 a+16 a+16 f16 f16 f16 f16 f16 e16 f16 f16 f16 f16 f16 f+16 f+16 f16
+C f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 f+16 f+16 f+16 g16 g16 f+16 g16 g16 f+16 g16
+C g+16 g+16 g+16 g+16 g+16 g+16 g16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16
+C a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a16 a+16 a16 a16 a+16 f16 f16 f16 f16 f16 f16 f16
+C f16 f16 e16 f16 f16 f16 f16 f16 f16 f16 f+16 f16 f16 f+16 f+16 f+16 f+16 g16 g16 g16
+C g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16
+C g+16 g+16 g+16 g+16 g+16 a16 a16 a+16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 f16
+C e16 f16 e16 e16 e16 e16 e16 e16 f16 f16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 g16
+C f+16 f+16 g16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g+16 g+16 g+16 g+16 g+16 g16 g16 g16
+C g16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16
+C a+16 a+16 a16 a+16 a+16 e16 e16 e16 e16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16
+C f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g16
+C g16 g16 g16 g+16 g16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16
+C a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 e16 e16
+C e16 f16 f16 f16 f+16 f+16 f+16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16
+C f+16 f+16 f+16 f+16 g16 g16 g16 g+16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16
+C a16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a+16 a16 a16 a16 a16 a16 a16 a+16 e16
+C e16 f16 e16 e16 f16 e16 e16 f16 f16 f16 f+16 f+16 f+16 f16 f16 f+16 f16 f16 f16 f16
+C f+16 f+16 f+16 f+16 g16 g16 f+16 f+16 f+16 f+16 g16 g16 g16 g+16 g16 g16 g+16 g16 g16
+C g+16 g16 g+16 g+16 a16 g+16 g+16 a16 a16 a16 a16 g+16 g+16 a16 a16 a16 a16 a16 a16 a+16
+C a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 e16 f16 f16 f16 f+16 f16 f16 f16 f16
+C f+16 f16 f+16 f+16 f+16 f+16 g16 g16 f+16 g16 g16 g16 g16 g16 g16 g16 f+16 g+16 g+16
+C g+16 g+16 g+16 g+16 g+16 g16 g+16 g+16 a16 a16 a16 g+16 a16 g+16 g+16 g+16 g+16 a16 a16
+C a+16 a+16 a+16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 e16 f16 f16 f16 f16 f16 f16 f16
+C f16 e16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f16 f16 f+16 f+16 f+16 g16 g16 g16 g16
+C g16 g16 f+16 g16 g16 g16 g16 g16 g16 g+16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 a16
+C a16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a16 a+16 a16 a16 a+16 e16 e16 e16
+C e16 e16 e16 f16 e16 e16 e16 f16 f16 f16 f16 f16 f16 f16 f+16 f16 f+16 f+16 g16 g16 g16
+C g16 g16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16
+C g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a+16 a+16 a16 a+16 a+16 a+16 a+16 a+16
+C a16 a+16 e16 f16 e16 e16 e16 e16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f+16 f+16
+C f+16 f+16 f+16 f+16 g16 f+16 f+16 g16 f+16 f+16 g16 f+16 g16 g16 g+16 g+16 g+16 g+16
+C g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16
+C a+16 a+16 a+16 a16 a+16 a16 a16 a16 a+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16
+C f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16
+C g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 g+16 g+16 g+16 g+16 g+16
+C g+16 g+16 a16 g+16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 f16 f16 e16 e16
+C e16 e16 e16 e16 e16 f16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 g16 f+16 f+16
+C f+16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g+16 g16 g+16 g+16 g+16 g16 g16 g16 g16 g+16
+C g+16 g+16 g+16 a16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a+16 a16 a16 a16 a16
+C a16 a16 a+16 e16 e16 f16 f16 f16 f16 f16 f16 e16 e16 f16 f16 f+16 f16 f16 f16 f16 f16
+C f+16 f+16 f+16 g16 g16 g16 g16 f+16 g16 g16 g16 g16 g16 g16 g+16 g16 g+16 g16 g16 g+16
+C g16 g+16 g+16 g16 a16 a16 a16 a16 a16 a16 a16 a16 g+16 a16 a16 a+16 a+16 a+16 a+16 a+16
+C a16 a+16 a+16 a+16 a+16 a+16 f16 f16 e16 f16 f16 f16 f16 f16 e16 e16 f16 f16 f+16 f+16
+C f+16 f+16 f+16 f+16 f+16 f16 f+16 f+16 g16 g16 g16 g16 g16 f+16 g16 g16 g16 g16 g+16
+C g+16 g+16 g+16 g16 g+16 g+16 g+16 g+16 g16 g+16 g+16 g+16 a16 g+16 g+16 g+16 a16 a16
+C a16 a16 a+16 a+16 a+16 a16 a16 a16 a16 a16 a16 a16 a+16 e16 e16 f16 e16 e16 e16 e16 e16
+C f16 f16 f16 f+16 f+16 f+16 f+16 f+16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 g16
+C f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g+16 g16 g16 g16 g16 g+16 g+16 g+16 a16 a16
+C a16 a16 a16 a16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a16 a+16 a+16 e16 e16
+C e16 e16 e16 e16 f16 e16 e16 f16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16 f+16 f+16 g16
+C g16 f+16 f+16 f+16 f+16 f+16 f+16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16
+C g+16 g+16 a16 a16 a16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a+16 a+16 a+16 a+16 a+16
+C a+16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16 f+16 f+16
+C f+16 f+16 f+16 f+16 f16 f16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16
+C g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a16
+C a16 a+16 a16 a16 a16 a+16 a16 a+16 a+16 a+16 a+16 a+16 f16 f16 f16 e16 e16 e16 f16 e16
+C e16 e16 f16 f16 f16 f16 f16 f16 f16 f+16 f16 f+16 f+16 g16 g16 f+16 g16 f+16 f+16 g16
+C f+16 f+16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 g+16 g+16 g+16 g+16 g+16 g+16
+C g+16 g+16 g+16 g+16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 a+16 e16
+C f16 e16 e16 e16 e16 e16 e16 e16 e16 f16 f+16 f16 f16 f16 f16 f16 f16 f16 f16 f16 f+16
+C g16 f+16 f+16 f+16 f+16 g16 g16 g16 g16 g16 g+16 g+16 g16 g+16 g16 g16 g16 g+16 g16 g16
+C g+16 g+16 a16 a16 a16 a16 a16 a16 a16 a16 a16 a+16 a+16 a+16 a+16 a16 a16 a16 a16 a16
+C a16 a+16 a16
+
+; SSG1
+G T192 P1 v5 o6 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7
+G e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16
+G v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16
+G e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6
+G f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16
+G v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6
+G f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16
+G e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16
+G v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16
+G f+16 v6 f16 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16
+G v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12
+G d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16
+G v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16
+G e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5
+G g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5
+G g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16
+G v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1&
+G d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12
+G d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16
+G v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7
+G e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16
+G v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12
+G d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16
+G v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6
+G f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 e16 v8 d+16 v12 d1 v5 g+16 v5 g16
+G f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5
+G g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16
+G v12 d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7
+G e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6
+G f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16
+G v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5
+G g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16
+G v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1&
+G d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12
+G d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g+16 v5 g16 v6 f16 e16 v7 e16
+G v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12
+G d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1& d16 v5 g16 f+16 v6 f16 e16 v7 e16 v12 d1
+G v5 g+16 v5 g16 f+16 v6 f16 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 e16 v8 d+16
+G v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7
+G e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16
+G v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 f16 v7 e16 v8 d+16 v12 d1 v5 g+16
+G v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12
+G d1 v5 g+16 v5 g16 f+16 v6 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8
+G d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16
+G v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6 f16 e16 v7 e16 v8 d+16 v12 d1 v5 g+16 v5 g16 v6
+G f16 e16 v7 e16 v12 d2.& d16
+
+; SSG2
+H T192 P1 v6 o6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16
+H d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16
+H v7 d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6
+H e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8.
+H f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16
+H v12 c+1 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12
+H c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16 d16 v12
+H c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7
+H d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16
+H v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16
+H v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8
+H f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8
+H f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1
+H v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1
+H v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16
+H v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16
+H v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8
+H v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8
+H v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6
+H f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6
+H f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12
+H c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16
+H d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6
+H e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8
+H f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8 f+8
+H v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6
+H f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16
+H v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7
+H d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7
+H d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6
+H e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8
+H f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1
+H v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16 v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1
+H v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16
+H v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7
+H d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5
+H f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1& c+16
+H v6 f+8 f+8 e8 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f16 v6 e8 v7 d16 v8 d16 v12 c+1 v6
+H f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16
+H v12 c+1 v6 f+8. f+16 v5 f16 v6 e16 v7 d+16 d16 v8 d16 v12 c+1 v6 f+8 f+8 v5 f16 v6 e16
+H v7 d+16 d16 v12 c+1 v6 f+8. f+16 v5 f+16 v6 e8 v7 d16 v8 d16 v12 c+1 v6 f+8. f+16 v5
+H f16 v6 e16 v7 d+16 d16 v12 c+2
+
+; SSG3
+I T192 P1 v12 o6 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5
+I g16 v6 f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16
+I g+2& g+8 g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 g16 v6 f16 v7 e16
+I v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5
+I g16 v6 f+16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1&
+I d+16 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16 v6 f16
+I v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8
+I g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 g16 v6 f16 v7 e16 v8 e16
+I v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16 v6
+I f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2&
+I g+8 g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 g16 v6 f16 v7 e16 v8
+I e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16
+I v6 f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16
+I g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+16 v5 g+16 g16 v6 f16
+I v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8
+I g+8 v5 g16 v6 f+16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12
+I d+1& d+16 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16 v6
+I f+16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2&
+I g+8 g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 v6 f+16 f16 v7 e16 v8
+I e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16
+I v6 f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16
+I g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 g16 v6 f16 v7
+I e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8
+I v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1&
+I d+16 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16 v6 f16
+I v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8
+I g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 v6 f+16 f16 v7 e16 v8 e16
+I v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5 g16 v6
+I f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2&
+I g+8 g+8 v5 g16 v6 f+16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 g16 v6 f16 v7 e16
+I v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+8 v5
+I g16 v6 f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16
+I g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2& g+8 g+16 v5 g+16 v6 f+16
+I f16 v7 e16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g16 v6 f+16 f16 v7 e16 v12 d+1& d+16 g+2&
+I g+8 g+8 v5 g16 v6 f+16 f16 v8 e16 v12 d+1 g+2& g+8. g+16 v5 g+16 v6 f+16 f16 v7 e16 v12
+I d+1& d+16 v6 g+4

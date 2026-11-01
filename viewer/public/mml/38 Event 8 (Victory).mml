@@ -1,0 +1,169 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 38 Event 8 (Victory).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T110 = 59.361 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 5, 7, 20, 10, 3, 13, 3, 20, 1, 2, 7, 0, 20, 2, 15, 14, 15, 27, 0, 3, 5, 0, 20, 2, 15, 14, 15, 27, 0, 2, 3, 0, 25, 2, 15, 14, 15, 27, 0, 0, 0, 0 }
+@1 = { 0, 7, 31, 18, 2, 0, 2, 127, 3, 10, 0, 0, 31, 14, 2, 0, 2, 127, 1, 0, 0, 0, 31, 6, 2, 0, 2, 15, 1, 0, 0, 0, 31, 2, 2, 8, 2, 12, 0, 0, 0, 0 }
+@2 = { 0, 7, 31, 18, 2, 0, 2, 46, 3, 10, 0, 0, 31, 14, 2, 0, 2, 45, 1, 0, 0, 0, 31, 6, 2, 0, 2, 127, 1, 0, 0, 0, 31, 2, 2, 8, 2, 127, 0, 0, 0, 0 }
+
+; CH1
+A T110 V108 M15,1,6,1 *1 @0 p3 V108 D0 o5 d2 *0 o4 b24 D-1 o5 c24 D0 d24 r24 d8 D-1 c8 M15,1,8,1 *1
+A D0 g3 *0 D-1 c12 D0 o4 b8 a+8 b12 o5 f+8 e8 o4 b12 M15,1,9,1 *1 a3 *0 g6 a6 M15,1,6,1 *1 o5 d2 *0
+A o4 b24 D-1 o5 c24 D0 d24 r24 d8 D-1 c8 M15,1,8,1 *1 D0 g3 *0 D-1 c12 D0 o4 b8 a+8 b12 o5 f+8 e8 o4
+A b12 a8 e8 g12 f+12 g24 a6& D9 a48& D-9 a48 M15,1,10,1 *1 D0 o5 b2 r24 *0 d24 g24 b24 D-1 o6 c12 D0
+A o5 b24 a24 r24 g24 r24 M15,1,9,1 *1 a4& a24 *0 b24 a24 M15,1,8,1 *1 g4 M15,1,7,1 e3 r12 M15,1,8,1
+A f+4 g4 *0 a6 M15,1,10,1 *1 b2 r24 *0 d24 g24 b24 D-1 o6 c12 D0 o5 b24 a24 r24 g24 r24 M15,1,9,1 *1
+A a4& a24 *0 b24 a24 M15,1,8,1 *1 g4 M15,1,7,1 e3 r12 M15,1,8,1 f+4 g4 *0 a6 *1 o6 g2 r12 *0 g12
+A M15,1,7,1 *1 f2 r12 *0 f12 *1 e2 r12 *0 e12 M15,1,6,1 *1 d2 r12 *0 d12 M15,1,8,1 *1 g2 r12 *0 g12
+A M15,1,7,1 *1 f2 r12 *0 f12 *1 e2 r12 *0 e12 M15,1,6,1 *1 d2& d6 *0 o5 d48
+
+; CH2
+B T110 V108 r96 M14,1,6,1 *1 @0 p3 V108 D4 o5 d2 *0 D7 o4 b24 D3 o5 c24 D4 d24 r24 d8 D3 c8 M14,1,8,1
+B *1 D6 g3 *0 D3 c12 D7 o4 b8 a+8 b12 D6 o5 f+8 D5 e8 D7 o4 b12 M14,1,9,1 *1 a3 *0 D6 g8& g32& D14
+B g96 D7 a8& a32& D16 a96 M14,1,6,1 *1 D4 o5 d2 *0 D7 o4 b24 D3 o5 c24 D4 d24 r24 d8 D3 c8 M14,1,8,1
+B *1 D6 g3 *0 D3 c12 D7 o4 b8 a+8 b12 D6 o5 f+8 D5 e8 D7 o4 b12 a8 D5 e8 D6 g12 f+12 g24 M14,1,9,1 *1
+B D7 a8.& a48 M14,1,10,1 o5 b2 r24 *0 D4 d24 D6 g24 D7 b24 D3 o6 c12 D7 o5 b24 a24 r24 D6 g24 r24
+B M14,1,9,1 *1 D7 a4& a24 *0 b24 a24 M14,1,8,1 *1 D6 g4 M14,1,7,1 D5 e3 r12 M14,1,8,1 D6 f+4 g4 *0 D7
+B a8& a32& D16 a96 M14,1,6,1 *1 D4 o6 d2 r24 *0 D6 o5 g24 D7 b24 D4 o6 d24 D5 e12 D4 d24 D3 c24 r24
+B D7 o5 b24 r24 M14,1,5,1 *1 D3 o6 c4& c24 *0 D4 d24 D3 c24 M14,1,10,1 *1 D7 o5 b4 M14,1,8,1 D6 g3
+B r12 M14,1,9,1 D7 a4 M14,1,10,1 b4 *0 D3 o6 c8& c32& D8 c96 *1 D7 o5 b2 r12 *0 b12 M14,1,9,1 *1 a2
+B r12 *0 a12 M14,1,8,1 *1 D6 g2 r12 *0 g12 M14,1,9,1 *1 D7 a2 r12 *0 a12 M14,1,10,1 *1 b2 r12 *0 b12
+B M14,1,9,1 *1 a2 r12 *0 a12 M14,1,8,1 *1 D6 g2 r12 *0 g12 M14,1,9,1 *1 D7 a2& a6& a96
+
+; CH3
+C T110 V108 @1 p3 V108 D0 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+C e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+C e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+C e2 r12 e12 o3 d2 r12 d12 o2 g48
+
+; CH3 OP1+OP2 (special mode)
+F T110 V108 @2 p3 V108 D0 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+F e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+F e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12 e2 r12 e12 o3 d2 r12 d12 o2 g2 r12 g12 f2 r12 f12
+F e2 r12 e12 o3 d2 r12 d12 o2 g48
+
+; SSG1
+G T110 P1 v13 D0 o3 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12
+G b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13
+G a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10
+G a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11
+G b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12
+G a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13
+G b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10
+G b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11
+G a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12
+G b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13
+G b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10
+G a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11
+G b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12
+G b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13
+G a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10
+G b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11
+G b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12
+G a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13
+G b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10
+G b24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11
+G a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12
+G b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13
+G a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10
+G a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11
+G b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12
+G a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13
+G a24& v12 a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10
+G b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11
+G a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12
+G a24& v11 a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13
+G b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10
+G a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11
+G a24& v10 a24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 b24& v12
+G b24& v11 b24& v10 b24& v13 b24& v12 b24& v11 b24& v10 b24& v13 a24& v12 a24& v11 a24& v10 a24& v13
+G a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10 a24& v13 a24& v12 a24& v11 a24& v10
+G a24& v13 b48
+
+; SSG2
+H T110 P1 v13 D2 o3 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12
+H g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13
+H f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10
+H f24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11
+H g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24&
+H v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24&
+H v10 f+24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24&
+H v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24&
+H v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24&
+H v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24&
+H v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12
+H f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10
+H f+24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11
+H g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12
+H f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13
+H g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10
+H g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12
+H f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10
+H f+24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11
+H g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12
+H f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13
+H g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10
+H g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12
+H f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10
+H f+24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11
+H g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12
+H f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13
+H g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10
+H g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12
+H f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10
+H f+24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11
+H g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12
+H f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13 f24& v12 f24& v11 f24& v10 f24& v13
+H g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 g24& v12 g24& v11 g24& v10
+H g24& v13 g24& v12 g24& v11 g24& v10 g24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12
+H f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10 f+24& v13 f+24& v12 f+24& v11 f+24& v10
+H f+24& v13 g48
+
+; SSG3
+I T110 P1 v13 D4 o3 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12
+I d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24&
+I v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24&
+I v10 c24& v13 D3 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12
+I e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24&
+I v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24&
+I v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24&
+I v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24& v13
+I c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10
+I c24& v13 D3 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24&
+I v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24& v13
+I d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10
+I d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11
+I d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24& v13 c24&
+I v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24&
+I v13 D3 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11
+I e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24& v13 d24&
+I v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24&
+I v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24&
+I v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12
+I c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13
+I D3 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24&
+I v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12
+I d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13
+I d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10
+I d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24&
+I v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 D3
+I e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10
+I e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24&
+I v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24&
+I v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24&
+I v13 d24& v12 d24& v11 d24& v10 d24& v13 D5 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11
+I c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 c24& v12 c24& v11 c24& v10 c24& v13 D3 e24&
+I v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24& v13 e24& v12 e24& v11 e24& v10 e24&
+I v13 e24& v12 e24& v11 e24& v10 e24& v13 D4 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11
+I d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d24& v12 d24& v11 d24& v10 d24& v13 d48

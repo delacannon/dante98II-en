@@ -1,0 +1,99 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 57 Loop 5 (Heart).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T150 = 81.761 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 4, 7, 31, 25, 1, 1, 1, 0, 0, 1, 0, 0, 31, 15, 12, 7, 12, 13, 0, 2, 7, 0, 24, 22, 15, 7, 15, 0, 0, 3, 7, 0, 31, 10, 12, 10, 12, 8, 0, 0, 0, 0 }
+@1 = { 0, 7, 6, 6, 5, 4, 5, 0, 0, 0, 0, 0, 10, 4, 5, 4, 5, 0, 0, 0, 0, 0, 10, 6, 5, 4, 5, 0, 0, 0, 0, 0, 10, 4, 15, 6, 15, 20, 0, 0, 0, 0 }
+@2 = { 4, 0, 16, 8, 15, 4, 15, 127, 0, 0, 0, 0, 20, 4, 15, 6, 15, 127, 0, 0, 0, 0, 16, 8, 15, 4, 15, 0, 0, 0, 0, 0, 20, 4, 15, 6, 15, 20, 0, 0, 0, 0 }
+@3 = { 4, 0, 16, 8, 15, 4, 15, 0, 0, 0, 0, 0, 20, 4, 15, 6, 15, 20, 0, 0, 0, 0, 16, 8, 15, 4, 15, 127, 0, 0, 0, 0, 20, 4, 15, 6, 15, 127, 0, 0, 0, 0 }
+
+; CH1
+A T150 V108 @0 p3 V108 D0 o3 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6
+A e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24&
+A d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12
+A d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24& c+12 r6 e24& d12 d+24&
+A c+12 r6 e48
+
+; CH2
+B T150 V108 @1 p3 V108 D0 o1 a3 r3 d3 r3 a3 r3 d3 r3 a3 r3 d3 r3 a3 r3 d3 r3 a3 r3 d3 r3 a48
+
+; CH3
+C T150 V108 @2 p3 V108 D29 o1 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3
+C D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+C a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3
+C D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+C D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+C a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+C D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a48
+
+; CH3 OP1+OP2 (special mode)
+F T150 V108 @3 p3 V108 D29 o1 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3
+F D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17
+F a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3
+F D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96&
+F D-11 d96& D10 d+96 r3 D29 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96& D-17 a96& D15
+F a+96& D-17 a96& D15 a+96& D-17 a96& D15 a+96 r3 D19 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96&
+F D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96& D-11 d96& D10 d+96 r3 D29 a48

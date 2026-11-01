@@ -1,0 +1,59 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 51 Jingle 7 (Fanfare 2).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T158 = 88.435 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 5, 7, 31, 15, 5, 4, 5, 14, 0, 2, 7, 0, 20, 2, 15, 7, 15, 29, 0, 3, 5, 0, 20, 2, 15, 7, 15, 29, 0, 2, 3, 0, 25, 2, 15, 7, 15, 29, 0, 0, 0, 0 }
+@1 = { 5, 7, 31, 15, 5, 4, 5, 127, 0, 2, 7, 0, 20, 2, 15, 7, 15, 127, 0, 3, 5, 0, 20, 2, 15, 7, 15, 29, 0, 2, 3, 0, 25, 2, 15, 7, 15, 29, 0, 0, 0, 0 }
+@2 = { 5, 7, 31, 15, 5, 4, 5, 14, 0, 2, 7, 0, 20, 2, 15, 7, 15, 29, 0, 3, 5, 0, 20, 2, 15, 7, 15, 127, 0, 2, 3, 0, 25, 2, 15, 7, 15, 127, 0, 0, 0, 0 }
+
+; CH1
+A T158 V108 @0 p3 V108 D0 o5 a6 r12 a24 a24 D-1 o6 c24 r24 D0 o5 b24 r24 a24 r24 g24 r24 a6& D14 a32&
+A D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13
+A a32& D14 a32& D-13 a32& D14 a32& D-13 a32 D0 a6 r12 a24 a24 D-1 o6 c24 r24 D0 o5 b16 r24 a12 r24 g8
+A r24 a6& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13
+A a32& D14 a32& D-13 a32& D14 a32& D-13 a32& D14 a32& D-13 a32 r12
+
+; CH2
+B T158 V108 @0 p3 V108 D4 o6 d6 r12 d24 d24 D5 f24 r24 e24 r24 D4 d24 r24 D3 c24 r24 D4 d6& D13 d32&
+B D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32&
+B D13 d32& D-5 d32& D13 d32& D-5 d32 D4 d6 r12 d24 d24 D5 f24 r24 e16 r24 D4 d12 r24 D3 c8 r24 D4 d6&
+B D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32& D13 d32&
+B D-5 d32& D13 d32& D-5 d32& D13 d32& D-5 d32 r12
+
+; CH3
+C T158 V108 @1 p3 V108 D9 o4 a6 r12 a24 a24 D4 o5 c24 r24 D10 o4 b24 r24 D9 a24 r24 D8 g24 r24 D9 a6
+C r12 a24 a24 D4 o5 c24 r24 D10 o4 b24 r24 D9 a24 r24 D8 g24 r24 D9 a6 r12 a24 a24 D4 o5 c24 r24 D10
+C o4 b16 r24 D9 a12 r24 D8 g8 r24 D9 a6& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23
+C a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32 r12
+
+; CH3 OP1+OP2 (special mode)
+F T158 V108 @2 p3 V108 D9 o4 a6 r12 a24 a24 D4 o5 c24 r24 D10 o4 b24 r24 D9 a24 r24 D8 g24 r24 D9 a6
+F r12 a24 a24 D4 o5 c24 r24 D10 o4 b24 r24 D9 a24 r24 D8 g24 r24 D9 a6 r12 a24 a24 D4 o5 c24 r24 D10
+F o4 b16 r24 D9 a12 r24 D8 g8 r24 D9 a6& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23
+F a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32& D23 a32& D-4 a32 r12
+
+; SSG1
+G T158 r48 P1 v13 D2 o3 a24& v12 a24& v11 a12 r12 v13 a12& o4 c24 r24 o3 b24 r24 a24 r24 D3 g24 r24
+G D2 a24& v12 a24& v11 a2& a12& v13 a24& v12 a24& v11 a12 r12 v13 a12& o4 c24 r24 o3 b24& v12 b48 r24
+G v13 a24& v12 a24 r24 v13 D3 g24& v12 g24& v11 g24 r24 v13 D2 a24& v12 a24& v11 a2& a12 r16
+
+; SSG2
+H T158 r48 P1 v13 D0 o2 d24& v12 d24& v11 d12 r12 v13 d12& D1 f24 r24 D0 e24 r24 d24 r24 c24 r24 d24&
+H v12 d24& v11 d2& d12& v13 d24& v12 d24& v11 d12 r12 v13 d12& D1 f24 r24 D0 e24& v12 e48 r24 v13
+H d24& v12 d24 r24 v13 c24& v12 c24& v11 c24 r24 v13 d24& v12 d24& v11 d2& d12 r16
+
+; SSG3
+I T158 r48 P1 v13 D0 o2 a24& v12 a24& v11 a12 r12 v13 a12& o3 c24 r24 o2 b24 r24 a24 r24 D1 g24 r24
+I D0 a24& v12 a24& v11 a12 r12 v13 a12& o3 c24 r24 o2 b24 r24 a24 r24 D1 g24 r24 D0 a24& v12 a24& v11
+I a12 r12 v13 a12& o3 c24 r24 o2 b24& v12 b48 r24 v13 a24& v12 a24 r24 v13 D1 g24& v12 g24& v11 g24
+I r24 v13 D0 a24& v12 a24& v11 a2& a12 r16

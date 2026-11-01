@@ -1,0 +1,216 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 21 Tower 1.vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T110 = 59.361 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 7, 0, 20, 7, 15, 9, 15, 34, 1, 5, 7, 0, 20, 7, 15, 9, 15, 24, 0, 3, 5, 0, 20, 7, 15, 9, 15, 24, 0, 2, 3, 0, 20, 7, 15, 9, 15, 24, 0, 0, 0, 0 }
+@1 = { 0, 7, 31, 18, 2, 0, 2, 127, 3, 10, 0, 0, 31, 14, 2, 0, 2, 127, 1, 0, 0, 0, 31, 6, 2, 0, 2, 18, 1, 0, 0, 0, 31, 2, 2, 8, 2, 12, 0, 0, 0, 0 }
+@2 = { 0, 7, 31, 18, 2, 0, 2, 36, 3, 10, 0, 0, 31, 14, 2, 0, 2, 45, 1, 0, 0, 0, 31, 6, 2, 0, 2, 127, 1, 0, 0, 0, 31, 2, 2, 8, 2, 127, 0, 0, 0, 0 }
+
+; CH1
+A T110 V108 M15,1,10,1 *1 @0 p3 V108 D0 o5 e2& e6 M15,1,14,1 a2& a6 M15,1,15,1 b2& b6 M15,1,9,1 o6
+A d2& d6 M15,1,10,1 o5 e2& e6 M15,1,14,1 a2& a6 M15,1,15,1 b2& b6 M15,1,9,1 o6 d2& d6 r6 *0 o5 a6 b6
+A g6 M15,1,14,1 *1 a3 *0 d6 g6 M15,1,10,1 *1 e2& e6 M15,1,9,1 d2& d6 r6 *0 a6 b6 g6 M15,1,14,1 *1 a3
+A *0 d6 g6 M15,1,10,1 *1 e2& e6 M15,1,9,1 d2& d6 r6 *0 e6 a6 b6 *1 o6 d3 *0 c+6 o5 a6 M15,1,15,1 *1
+A b2& b6 M15,1,14,1 a2& a6 r6 *0 e6 a6 b6 M15,1,9,1 *1 o6 d3 *0 c+6 e6 M15,1,15,1 *1 o5 b2& b6
+A M15,1,9,1 o6 d4 M15,1,10,1 e4 *0 f+6 o5 e32
+
+; CH2
+B T110 V108 r48 M13,1,15,1 *1 @0 p3 V108 D10 o5 b2& b6 M13,1,10,1 D7 o6 e2& e6 e2& e6 M13,1,14,1 D9
+B a2& a6 M13,1,15,1 D10 o5 b2& b6 M13,1,10,1 D7 o6 e2& e6 e2& e6 M13,1,14,1 D9 a2& a6 r6 *0 o5 a8&
+B a48& D23 a48 D10 b8& b48& D25 b48 D8 g8& g48& D20 g48 *1 D9 a3 *0 D6 d8& d48& D15 d48 D8 g8& g48&
+B D20 g48 M13,1,10,1 *1 D7 e2& e6 M13,1,9,1 D6 d2& d6 r6 *0 D9 a8& a48& D23 a48 D10 b8& b48& D25 b48
+B D8 g8& g48& D20 g48 M13,1,14,1 *1 D9 a3 *0 D6 d8& d48& D15 d48 D8 g8& g48& D20 g48 M13,1,10,1 *1 D7
+B e2& e6 M13,1,9,1 D6 d2& d6 r6 *0 D7 e8& e48& D17 e48 D9 a8& a48& D23 a48 D10 b8& b48& D25 b48 *1 D6
+B o6 d3 *0 c+8& c+48& D15 c+48 D9 o5 a8& a48& D23 a48 M13,1,15,1 *1 D10 b2& b6 M13,1,14,1 D9 a2& a6
+B r6 *0 D7 e8& e48& D17 e48 D9 a8& a48& D23 a48 D10 b8& b48& D25 b48 M13,1,9,1 *1 D6 o6 d3 *0 c+8&
+B c+48& D15 c+48 D7 e8& e48& D17 e48 M13,1,15,1 *1 D10 o5 b2& b6 M13,1,9,1 D6 o6 d4 M13,1,10,1 D7 e4
+B *0 D8 f+8& f+48& D20 f+48& D-3 f+96
+
+; CH3
+C T110 V108 @1 p3 V108 D0 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2
+C r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12
+C o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2
+C g6 o2 e32
+
+; CH3 OP1+OP2 (special mode)
+F T110 V108 @2 p3 V108 D0 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2
+F r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12
+F o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2 g6 o2 e2 r12 a12 o3 d2 o2 g6 e2 r12 a12 o3 d2
+F g6 o2 e32
+
+; SSG1
+G T110 P1 v13 D0 o3 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12
+G b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24&
+G v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7
+G a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12
+G a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48&
+G v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13
+G b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24&
+G v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6
+G a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11
+G b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48&
+G v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12
+G a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24&
+G v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7
+G b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12
+G b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48&
+G v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13
+G a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24&
+G v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6
+G b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11
+G b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48&
+G v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12
+G a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24&
+G v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7
+G b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12
+G a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48&
+G v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13
+G b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24&
+G v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6
+G a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11
+G a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48&
+G v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12
+G b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24&
+G v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7
+G a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12
+G b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48&
+G v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13
+G a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24&
+G v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6
+G a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11
+G b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48&
+G v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12
+G a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24&
+G v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7
+G b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12
+G b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48&
+G v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13
+G a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24&
+G v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6
+G b24& v13 b48& v12 b48& v7 b24& v12 b48& v11 b48& v6 b24& v13 a48& v12 a48& v7 a24& v12 a48& v11
+G a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48&
+G v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 b32
+
+; SSG2
+H T110 P1 v13 D1 o3 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12
+H a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24&
+H v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7
+H g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12
+H g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48&
+H v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13
+H a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24&
+H v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6
+H g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11
+H a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48&
+H v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12
+H g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24&
+H v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7
+H a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12
+H a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48&
+H v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13
+H g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24&
+H v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6
+H a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11
+H a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48&
+H v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12
+H g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24&
+H v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7
+H a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12
+H g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48&
+H v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13
+H a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24&
+H v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6
+H g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11
+H g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48&
+H v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12
+H a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24&
+H v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7
+H g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12
+H a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48&
+H v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13
+H g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24&
+H v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6
+H g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11
+H a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48&
+H v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12
+H g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24&
+H v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7
+H a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12
+H a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48&
+H v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13
+H g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24&
+H v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6
+H a24& v13 a48& v12 a48& v7 a24& v12 a48& v11 a48& v6 a24& v13 g48& v12 g48& v7 g24& v12 g48& v11
+H g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48&
+H v11 g48& v6 g24& v13 g48& v12 g48& v7 g24& v12 g48& v11 g48& v6 g24& v13 a32
+
+; SSG3
+I T110 P1 v13 D2 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7
+I a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2
+I a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12
+I d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24&
+I v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4
+I e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12
+I b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7
+I a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3
+I g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12
+I d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24&
+I v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48&
+I v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7
+I b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13
+I D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48&
+I v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48&
+I v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3
+I o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12
+I d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7
+I a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13
+I D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48&
+I v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7
+I e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3
+I d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12
+I d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7
+I a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13
+I b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12
+I a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24&
+I v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3
+I d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12
+I e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24&
+I v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48&
+I v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48&
+I v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24&
+I v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3
+I e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48&
+I v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13
+I o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48&
+I v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48&
+I v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24&
+I v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48&
+I v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7
+I d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13
+I o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48&
+I v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48&
+I v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13
+I D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12
+I d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24&
+I v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4
+I e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12
+I b48& v7 b24& v13 o4 e48& v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7
+I a24& v13 b48& v12 b48& v7 b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3
+I g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12
+I d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e48& v12 e48& v7 e24&
+I v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7 b24& v13 o4 e48&
+I v12 e48& v7 e24& v13 D3 o3 e48& v12 e48& v7 e24& v13 D2 a48& v12 a48& v7 a24& v13 b48& v12 b48& v7
+I b24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48& v12 g48& v7 g24& v13
+I D2 a48& v12 a48& v7 a24& v13 o4 d48& v12 d48& v7 d24& v13 D4 o3 d48& v12 d48& v7 d24& v13 D3 g48&
+I v12 g48& v7 g24& v13 D2 a48& v12 a48& v7 a24& v13 o4 e32

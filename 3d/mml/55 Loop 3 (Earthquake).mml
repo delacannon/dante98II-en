@@ -1,0 +1,37 @@
+; VGM Analyzer MML for OPNAvoid (PMD-style dialect), tick-exact
+; Source: 55 Loop 3 (Earthquake).vgz
+; YM2203 FM/SSG on the song's own Timer B ticks: T198 = 149.425 BPM, 24 ticks per quarter (T estimated from write timing).
+; Pitch = PMD note + D detune; volume changes inside notes are tied pieces (FM V, SSG v).
+; Vibrato that PMD's own LFO reproduces is written as M/*1, other pitch movement as per-tick D.
+; Mixed for OPNAvoid's player: FM 19 TL steps down, rhythm master 4 steps down, SSG v on its 3 dB curve.
+; Not reproduced: hardware LFO, SSG hardware envelope, operator changes other than carrier TL.
+; OPNAvoid compatibility does not imply compatibility with every PMD compiler.
+; VGM loop is not expanded.
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x22
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x93
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x97
+; WARNING (1): Unconverted YM2203 register port=0 reg=0x9b
+; WARNING (1): SSG hardware envelope shape omitted
+; WARNING (1): FM3 special-mode OP1+OP2 voice omitted: part F is in use
+@0 = { 4, 0, 18, 3, 0, 8, 0, 0, 0, 1, 7, 0, 24, 3, 0, 6, 0, 12, 0, 2, 7, 0, 18, 3, 0, 8, 0, 0, 0, 0, 0, 0, 24, 3, 0, 6, 0, 12, 0, 0, 0, 0 }
+@1 = { 4, 0, 18, 3, 0, 8, 0, 127, 0, 1, 7, 0, 24, 3, 0, 6, 0, 127, 0, 2, 7, 0, 18, 3, 0, 8, 0, 0, 0, 0, 0, 0, 24, 3, 0, 6, 0, 12, 0, 0, 0, 0 }
+@2 = { 4, 0, 18, 3, 0, 8, 0, 0, 0, 1, 7, 0, 24, 3, 0, 6, 0, 12, 0, 2, 7, 0, 18, 3, 0, 8, 0, 127, 0, 0, 0, 0, 24, 3, 0, 6, 0, 127, 0, 0, 0, 0 }
+
+; CH1
+A T198 V108 r24 @0 p3 V108 D-1 o1 c24 r24 D0 f24 r24 g24 r24 d24 r24 g24 r24 b24 r24 D-1 c24 r24 D0
+A f24 r24 g24 r24 D-1 c24 r24 D0 f24 r32
+
+; CH2
+B T198 V108 r24 r96 M1,2,24,1 *1 @0 p3 V108 D-1 o1 a+24 r24 M1,2,17,1 f24 r24 M1,2,16,1 d+24 r24
+B M1,2,21,1 g+24 r24 M1,2,19,1 f+24 r24 M1,2,17,1 f24 r24 M1,2,24,1 a+24 r24 M1,2,17,1 f24 r24
+B M1,2,14,1 c+24 r24 M1,2,16,1 d+24 r24 M1,2,24,1 a+24 r48
+
+; CH3
+C T198 V108 r48 M1,2,52,1 *1 @1 p3 V108 D31 o1 b24 r24 M1,2,48,1 D29 a24 r24 M1,2,35,1 D21 e24 r24
+C M1,2,32,1 D19 d24 r24 M1,2,42,1 D25 g24 r24 M1,2,38,1 D22 f24 r24 M1,2,35,1 D21 e24 r24 M1,2,48,1
+C D29 a24 r24 M1,2,35,1 D21 e24 r24 M1,2,29,1 D16 c24 r24 M1,2,32,1 D19 d24 r24 r96
+
+; CH3 OP1+OP2 (special mode)
+F T198 V108 r48 M1,2,52,1 *1 @2 p3 V108 D31 o1 b24 r24 M1,2,48,1 D29 a24 r24 M1,2,35,1 D21 e24 r24
+F M1,2,32,1 D19 d24 r24 M1,2,42,1 D25 g24 r24 M1,2,38,1 D22 f24 r24 M1,2,35,1 D21 e24 r24 M1,2,48,1
+F D29 a24 r24 M1,2,35,1 D21 e24 r24 M1,2,29,1 D16 c24 r24 M1,2,32,1 D19 d24 r24 r96
